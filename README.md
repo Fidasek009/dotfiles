@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal dotfiles and setup manifests for `/home/fida` on CachyOS/Hyprland.
+Personal dotfiles and setup manifests for a CachyOS/Hyprland user environment.
 
 ## Layout
 
