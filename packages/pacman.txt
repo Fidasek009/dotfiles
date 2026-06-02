@@ -35,6 +35,7 @@ cachyos-wallpapers
 cachyos-zsh-config
 cantarell-fonts
 chwd
+cliphist
 cpupower
 cryptsetup
 device-mapper
