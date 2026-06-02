@@ -64,7 +64,15 @@ To change it:
 
 The script copies the image into the dotfiles repo, updates the `current` symlink, updates the live symlink, and restarts `hyprpaper` when available.
 
-SDDM is separate from user dotfiles because its greeter runs as the `sddm` user and cannot read a private home directory. Copy the chosen wallpaper into a root-readable SDDM theme path and point the SDDM Astronaut theme config at that copied file.
+SDDM is separate from user dotfiles because its greeter runs as the `sddm` user and cannot read a private home directory. Its config and root-readable wallpaper copy are tracked under `system/`.
+
+Install the local SDDM config with:
+
+```sh
+./scripts/install-sddm-config.sh
+```
+
+The script prints the privileged install commands instead of running `sudo`. It installs the local SDDM config, installs the SDDM wallpaper copy, selects the tracked theme preset, and then shows the restart command.
 
 ## Install External Tools
 
