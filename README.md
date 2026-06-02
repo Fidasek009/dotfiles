@@ -46,6 +46,26 @@ The install script prints privileged `pacman` commands instead of running `sudo`
 
 For Flatpaks, make sure Flathub is configured first.
 
+## Wallpaper
+
+Hyprland and Hyprlock read the current wallpaper through:
+
+```text
+~/.local/share/wallpapers/current
+```
+
+In the repo this is a symlink under `home/.local/share/wallpapers/`, so the real wallpaper can be a JPG, PNG, or WebP without changing Hyprlock or Hyprpaper config.
+
+To change it:
+
+```sh
+./scripts/set-wallpaper.sh ~/Downloads/wallpaper.png
+```
+
+The script copies the image into the dotfiles repo, updates the `current` symlink, updates the live symlink, and restarts `hyprpaper` when available.
+
+SDDM is separate from user dotfiles because its greeter runs as the `sddm` user and cannot read a private home directory. Copy the chosen wallpaper into a root-readable SDDM theme path and point the SDDM Astronaut theme config at that copied file.
+
 ## Install External Tools
 
 External tools that are not installed through `pacman`, `paru`, or Flatpak are installed from:
