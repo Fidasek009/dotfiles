@@ -22,7 +22,13 @@ Then edit `~/.config/hypr/monitors.conf` for the current machine.
 
 ## Apply Dotfiles
 
-Use the included linker:
+Use the standard dotfiles entrypoint:
+
+```sh
+./install.sh
+```
+
+It calls the included linker:
 
 ```sh
 ./scripts/link-dotfiles.sh
