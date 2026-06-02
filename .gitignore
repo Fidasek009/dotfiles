@@ -1,0 +1,4 @@
+home/.config/hypr/monitors.conf
+*.swp
+*.swo
+.DS_Store
