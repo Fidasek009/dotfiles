@@ -2,17 +2,26 @@
 set -eu
 
 repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
-home_dir=${HOME:-/home/fida}
+home_dir=${HOME:?HOME is not set}
 
-find "$repo_dir/home" -type f ! -name '*.example' -print | while IFS= read -r source; do
+find "$repo_dir/home" \( -type f -o -type l \) ! -name '*.example' -print | while IFS= read -r source; do
 	rel=${source#"$repo_dir/home/"}
 	target=$home_dir/$rel
 
 	mkdir -p "$(dirname -- "$target")"
+	if [ -L "$source" ]; then
+		link_target=$(readlink -- "$source")
+		case $link_target in
+			/*) source_link=$link_target ;;
+			*) source_link=$(dirname -- "$source")/$link_target ;;
+		esac
+	else
+		source_link=$source
+	fi
 
 	if [ -L "$target" ]; then
 		current=$(readlink -- "$target")
-		if [ "$current" = "$source" ]; then
+		if [ "$current" = "$source_link" ]; then
 			continue
 		fi
 		printf 'refusing different symlink: %s -> %s\n' "$target" "$current" >&2
@@ -27,5 +36,5 @@ find "$repo_dir/home" -type f ! -name '*.example' -print | while IFS= read -r so
 		rm -- "$target"
 	fi
 
-	ln -s "$source" "$target"
+	ln -s "$source_link" "$target"
 done
