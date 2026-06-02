@@ -13,6 +13,7 @@ bluez-hid2hci
 bluez-libs
 bluez-obex
 bluez-utils
+brightnessctl
 btop
 btrfs-assistant
 btrfs-progs
@@ -59,6 +60,7 @@ fsarchiver
 fuzzel
 git
 glances
+grim
 gst-libav
 gst-plugin-pipewire
 gst-plugin-va
@@ -149,9 +151,11 @@ reflector
 ripgrep
 rsync
 s-nail
+satty
 sddm
 sg3_utils
 shelly
+slurp
 smartmontools
 snapper
 sof-firmware
