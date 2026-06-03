@@ -26,11 +26,13 @@ if [ ! -f "$wallpaper" ]; then
 	exit 1
 fi
 
-echo "SDDM is system-managed, so install this config with:"
-echo "  sudo install -Dm644 '$source' '$target'"
-echo "  sudo install -Dm644 '$theme_conf' '$theme_conf_target'"
-echo "  sudo install -Dm644 '$wallpaper' '$wallpaper_target'"
-echo "  sudo sed -i 's|^ConfigFile=.*|ConfigFile=Themes/fida.conf|' '$metadata'"
+sudo install -Dm644 "$source" "$target"
+sudo install -Dm644 "$theme_conf" "$theme_conf_target"
+sudo install -Dm644 "$wallpaper" "$wallpaper_target"
+sudo sed -i 's|^ConfigFile=.*|ConfigFile=Themes/fida.conf|' "$metadata"
+
+echo "Installed SDDM config and wallpaper."
 echo
-echo "Then restart SDDM when convenient, or reboot:"
+echo "The new SDDM wallpaper will appear after rebooting or restarting SDDM."
+echo "Restarting SDDM will end the current graphical session:"
 echo "  sudo systemctl restart sddm"

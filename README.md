@@ -38,13 +38,13 @@ It refuses to overwrite live files that differ from the repo copy. Hardware-spec
 
 ## Install Packages
 
-The install script prints privileged `pacman` commands instead of running `sudo`.
+The install script installs packages from the tracked manifests. It uses `sudo` for native packages, `paru` for AUR packages, and `flatpak` for Flatpak apps.
 
 ```sh
 ./scripts/install-packages.sh
 ```
 
-For Flatpaks, make sure Flathub is configured first.
+If `paru` or `flatpak` is missing, install and configure that prerequisite, then rerun the script.
 
 ## Wallpaper
 
@@ -72,7 +72,7 @@ Install the local SDDM config with:
 ./scripts/install-sddm-config.sh
 ```
 
-The script prints the privileged install commands instead of running `sudo`. It installs the local SDDM config, installs the SDDM wallpaper copy, selects the tracked theme preset, and then shows the restart command.
+The script runs the privileged install commands through `sudo`. It installs the local SDDM config, installs the SDDM wallpaper copy, selects the tracked theme preset, and prints the restart command with a warning because restarting SDDM ends the current graphical session.
 
 ## Install External Tools
 

@@ -2,24 +2,33 @@
 set -eu
 
 repo_dir=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+failed=0
 
-echo "Native packages:"
-echo "  sudo pacman -S --needed - < '$repo_dir/packages/pacman.txt'"
-echo
+if [ -s "$repo_dir/packages/pacman.txt" ]; then
+	if ! command -v pacman >/dev/null 2>&1; then
+		printf 'pacman is required to install native packages.\n' >&2
+		exit 1
+	fi
+
+	sudo pacman -S --needed - < "$repo_dir/packages/pacman.txt"
+fi
 
 if [ -s "$repo_dir/packages/aur.txt" ]; then
-	echo "AUR/foreign packages:"
 	if command -v paru >/dev/null 2>&1; then
-		echo "  paru -S --needed - < '$repo_dir/packages/aur.txt'"
+		paru -S --needed - < "$repo_dir/packages/aur.txt"
 	else
-		echo "  install an AUR helper such as paru, then run:"
-		echo "  paru -S --needed - < '$repo_dir/packages/aur.txt'"
+		printf 'paru is required to install AUR packages. Install paru, then rerun this script.\n' >&2
+		failed=1
 	fi
-	echo
 fi
 
 if [ -s "$repo_dir/packages/flatpak.txt" ]; then
-	echo "Flatpak apps:"
-	echo "  xargs -r flatpak install -y flathub < '$repo_dir/packages/flatpak.txt'"
-	echo
+	if command -v flatpak >/dev/null 2>&1; then
+		xargs -r flatpak install -y flathub < "$repo_dir/packages/flatpak.txt"
+	else
+		printf 'flatpak is required to install Flatpak apps. Install flatpak and configure Flathub, then rerun this script.\n' >&2
+		failed=1
+	fi
 fi
+
+exit "$failed"
