@@ -24,7 +24,7 @@ fi
 
 if [ -s "$repo_dir/packages/flatpak.txt" ]; then
 	if command -v flatpak >/dev/null 2>&1; then
-		xargs -r flatpak install -y flathub < "$repo_dir/packages/flatpak.txt"
+		xargs -r flatpak install -y --user flathub < "$repo_dir/packages/flatpak.txt"
 	else
 		printf 'flatpak is required to install Flatpak apps. Install flatpak and configure Flathub, then rerun this script.\n' >&2
 		failed=1
