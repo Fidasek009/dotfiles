@@ -1,16 +1,16 @@
+@import "mocha.css";
+
 * {
     border: none;
-    font-family: sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+    font-family: "FantasqueSansM Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(24, 24, 27, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    color: #e5e7eb;
+    background: transparent;
+    color: @text;
 }
 
 #workspaces,
@@ -20,45 +20,114 @@ window#waybar {
 #network,
 #battery,
 #clock {
-    padding: 0 9px;
+    background: @surface0;
+    padding: 0 10px;
+    margin: 3px 0;
+}
+
+#workspaces {
+    border-radius: 16px;
+    margin-left: 7px;
+    padding: 0;
 }
 
 #workspaces button {
-    border-radius: 6px;
-    color: #9ca3af;
-    margin: 5px 2px;
+    border-radius: 16px;
+    color: @subtext0;
+    margin: 0;
     padding: 0 9px;
 }
 
+#workspaces button:nth-child(1) {
+    color: @blue;
+}
+
+#workspaces button:nth-child(2) {
+    color: @green;
+}
+
+#workspaces button:nth-child(3) {
+    color: @yellow;
+}
+
+#workspaces button:nth-child(4) {
+    color: @maroon;
+}
+
+#workspaces button:nth-child(5) {
+    color: @mauve;
+}
+
+#workspaces button:hover {
+    background: transparent;
+    color: @sapphire;
+}
+
 #workspaces button.active {
-    background: #3b82f6;
-    color: #ffffff;
+    color: @base;
+}
+
+#workspaces button:nth-child(1).active {
+    background: @blue;
+}
+
+#workspaces button:nth-child(2).active {
+    background: @green;
+}
+
+#workspaces button:nth-child(3).active {
+    background: @yellow;
+}
+
+#workspaces button:nth-child(4).active {
+    background: @maroon;
+}
+
+#workspaces button:nth-child(5).active {
+    background: @mauve;
 }
 
 #workspaces button.urgent {
-    background: #ef4444;
-    color: #ffffff;
+    color: @red;
 }
 
 #window {
-    color: #d1d5db;
+    border-radius: 16px;
+    color: @mauve;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 0 14px;
 }
 
-#pulseaudio,
-#network,
-#battery,
+#pulseaudio {
+    border-radius: 16px 0 0 16px;
+    color: @maroon;
+    margin-left: 8px;
+}
+
+#network {
+    color: @yellow;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}
+
 #clock {
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 6px;
-    margin: 5px 0;
+    border-radius: 0 16px 16px 0;
+    color: @blue;
+    margin-right: 8px;
 }
 
-#battery.warning {
-    background: #f59e0b;
-    color: #111827;
-}
-
-#battery.critical {
-    background: #ef4444;
-    color: #ffffff;
+#tray {
+    border-radius: 16px;
+    margin-right: 7px;
 }

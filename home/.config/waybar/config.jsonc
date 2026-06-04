@@ -2,10 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 34,
-    "margin-top": 6,
-    "margin-left": 8,
-    "margin-right": 8,
-    "spacing": 6,
+    "spacing": 0,
 
     "modules-left": [
         "hyprland/workspaces"
@@ -14,11 +11,11 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "tray",
         "pulseaudio",
         "network",
         "battery",
-        "clock"
+        "clock",
+        "tray"
     ],
 
     "hyprland/workspaces": {
@@ -39,27 +36,31 @@
     },
 
     "pulseaudio": {
-        "format": "VOL {volume}%",
-        "format-muted": "muted",
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
         "on-click": "pavucontrol"
     },
 
     "network": {
-        "format-wifi": "{essid}",
-        "format-ethernet": "wired",
-        "format-disconnected": "offline",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰈀 wired",
+        "format-disconnected": "󰤭 offline",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
 
     "battery": {
-        "format": "BAT {capacity}%",
-        "format-charging": "BAT {capacity}%+",
-        "format-plugged": "BAT {capacity}%"
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
     "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%Y-%m-%d %H:%M}",
+        "format": " {:%H:%M}",
+        "format-alt": " {:%Y-%m-%d %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>"
     }
 }
