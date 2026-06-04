@@ -53,7 +53,6 @@ ethtool
 exfatprogs
 f2fs-tools
 fastfetch
-ffmpegthumbnailer
 flatpak
 fsarchiver
 fuzzel
@@ -67,7 +66,9 @@ gst-plugin-va
 gst-plugins-bad
 gst-plugins-ugly
 gvfs
+gvfs-dnssd
 gvfs-smb
+gvfs-wsdd
 hdparm
 hwdetect
 hwinfo
