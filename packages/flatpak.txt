@@ -1,4 +1,4 @@
-app.zen_browser.zen
+com.brave.Browser
 com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.spotify.Client
