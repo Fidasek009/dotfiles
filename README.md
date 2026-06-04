@@ -46,6 +46,14 @@ The install script installs packages from the tracked manifests. It uses `sudo` 
 
 If `paru` or `flatpak` is missing, install and configure that prerequisite, then rerun the script.
 
+Flatpak sandbox exceptions are configured separately from the generated package inventory:
+
+```sh
+./scripts/configure-flatpak-overrides.sh
+```
+
+This is also called after Flatpak app installs. It grants the Visual Studio Code Flatpak broad development-oriented host access, including the host filesystem, host OS files under `/run/host`, user runtime sockets, the native Docker socket, and Discord IPC sockets used by rich presence extensions.
+
 ## Wallpaper
 
 Hyprland and Hyprlock read the current wallpaper through:

@@ -40,3 +40,4 @@ Update this file whenever a lasting system preference, config location, or manag
 - Dotfiles standard entrypoint: `~/dotfiles/install.sh`
 - Generated dotfiles package inventories: `~/dotfiles/packages/`; refresh them with `~/dotfiles/scripts/refresh-package-lists.sh`
 - External non-package-manager installs live in `~/dotfiles/scripts/install-external-tools.sh`
+- Flatpak app sandbox overrides live in `~/dotfiles/scripts/configure-flatpak-overrides.sh`
