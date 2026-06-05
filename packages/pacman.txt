@@ -118,7 +118,6 @@ mtools
 nano
 nano-syntax-highlighting
 netctl
-network-manager-applet
 networkmanager
 networkmanager-openvpn
 nfs-utils

@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+export NEWT_COLORS='
+root=white,black
+window=white,black
+border=brightblack,black
+title=brightcyan,black
+textbox=white,black
+button=black,brightcyan
+compactbutton=white,black
+listbox=white,black
+actlistbox=black,brightcyan
+actsellistbox=black,brightcyan
+checkbox=white,black
+actcheckbox=black,brightcyan
+entry=white,black
+label=white,black
+'
+
+exec nmtui-connect
