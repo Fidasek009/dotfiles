@@ -8,6 +8,7 @@ base
 base-devel
 bash-completion
 bind
+bluetui
 bluez
 bluez-hid2hci
 bluez-libs
@@ -117,6 +118,7 @@ mtools
 nano
 nano-syntax-highlighting
 netctl
+network-manager-applet
 networkmanager
 networkmanager-openvpn
 nfs-utils
