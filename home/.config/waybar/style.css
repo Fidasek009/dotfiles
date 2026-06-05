@@ -20,7 +20,8 @@ window#waybar {
 #network,
 #bluetooth,
 #battery,
-#clock {
+#clock,
+#custom-media {
     background: @surface0;
     padding: 0 10px;
     margin: 3px 0;
@@ -107,9 +108,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    border-radius: 16px 0 0 16px;
     color: @maroon;
-    margin-left: 8px;
 }
 
 #network {
@@ -140,13 +139,34 @@ window#waybar.empty #window {
 #clock {
     border-radius: 0 16px 16px 0;
     color: @blue;
+    margin-right: 7px;
+}
+
+#battery {
+    border-radius: 16px 0 0 16px;
+    margin-left: 8px;
+}
+
+#custom-media {
+    border-radius: 16px;
+    color: @teal;
     margin-right: 8px;
+}
+
+#custom-media.paused {
+    color: @yellow;
+}
+
+#custom-media.stopped {
+    background: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 #tray {
     background: @surface0;
     border-radius: 16px;
-    margin: 3px 7px 3px 0;
+    margin: 3px 0;
     padding: 0 10px;
 }
 

@@ -11,12 +11,13 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "pulseaudio",
-        "bluetooth",
-        "network",
+        "custom/media",
+        "tray",
         "battery",
-        "clock",
-        "tray"
+        "bluetooth",
+        "pulseaudio",
+        "network",
+        "clock"
     ],
 
     "hyprland/workspaces": {
@@ -77,5 +78,17 @@
         "format": " {:%H:%M}",
         "format-alt": " {:%Y-%m-%d %H:%M}",
         "tooltip-format": "<tt>{calendar}</tt>"
+    },
+
+    "custom/media": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/media-player.py",
+        "max-length": 45,
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "escape": true
     }
 }
