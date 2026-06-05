@@ -12,6 +12,7 @@
     ],
     "modules-right": [
         "pulseaudio",
+        "bluetooth",
         "network",
         "battery",
         "clock",
@@ -49,7 +50,20 @@
         "format-ethernet": "󰈀 wired",
         "format-disconnected": "󰤭 offline",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "kitty -e nmtui"
+        "on-click": "nm-connection-editor"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "format-on": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "tooltip-format": "{controller_alias}",
+        "tooltip-format-connected": "{controller_alias}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager",
+        "on-click-right": "toggle-bluetooth"
     },
 
     "battery": {

@@ -18,6 +18,7 @@ window#waybar {
 #tray,
 #pulseaudio,
 #network,
+#bluetooth,
 #battery,
 #clock {
     background: @surface0;
@@ -99,6 +100,12 @@ window#waybar {
     padding: 0 14px;
 }
 
+window#waybar.empty #window {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
 #pulseaudio {
     border-radius: 16px 0 0 16px;
     color: @maroon;
@@ -107,6 +114,15 @@ window#waybar {
 
 #network {
     color: @yellow;
+}
+
+#bluetooth {
+    color: @sapphire;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @subtext0;
 }
 
 #battery {
