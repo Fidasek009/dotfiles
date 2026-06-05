@@ -83,12 +83,12 @@ intel-media-sdk
 intel-ucode
 iwd
 jfsutils
+jq
 kitty
 less
-lib32-nvidia-580xx-utils
-lib32-opencl-nvidia-580xx
 lib32-vulkan-icd-loader
 lib32-vulkan-intel
+lib32-vulkan-nouveau
 libdvdcss
 libgsf
 libopenraw
@@ -126,11 +126,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
-nvidia-580xx-dkms
-nvidia-580xx-settings
-nvidia-580xx-utils
-nvidia-prime
-opencl-nvidia-580xx
 openssh
 os-prober
 pacman-contrib
@@ -184,6 +179,7 @@ vim
 vlc-plugins-all
 vulkan-icd-loader
 vulkan-intel
+vulkan-nouveau
 waybar
 wget
 which
@@ -192,6 +188,7 @@ wl-clipboard
 wpa_supplicant
 xdg-desktop-portal-hyprland
 xdg-user-dirs
+xf86-video-nouveau
 xfsprogs
 xl2tpd
 xorg-xwayland
