@@ -1,7 +1,7 @@
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
-# overwrite greeting
-# potentially disabling fastfetch
-#function fish_greeting
-#    # smth smth
-#end
+alias kys='systemctl poweroff'
+
+# Disable CachyOS fastfetch welcome message.
+function fish_greeting
+end
