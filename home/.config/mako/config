@@ -2,6 +2,18 @@
 default-timeout=5000
 ignore-timeout=1
 
+# Compact rounded layout.
+font=Noto Sans 9
+width=360
+height=96
+padding=10,12
+margin=8
+border-size=2
+border-radius=10
+max-icon-size=40
+icon-border-radius=6
+format=<b>%s</b>\n<span size="small">%b</span>
+
 # Catppuccin Mocha Blue
 background-color=#1e1e2e
 text-color=#cdd6f4
