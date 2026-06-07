@@ -2,4 +2,3 @@ com.brave.Browser
 com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.spotify.Client
-com.visualstudio.code

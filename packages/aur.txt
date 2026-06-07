@@ -1,1 +1,2 @@
 sddm-astronaut-theme
+visual-studio-code-bin
