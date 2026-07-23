@@ -94,7 +94,7 @@
     },
 
     "custom/codexbar": {
-        "exec": "env CODEXBAR_PROVIDERS=codex CODEXBAR_BAR_PROVIDER=codex $HOME/.config/waybar/scripts/codexbar.sh",
+        "exec": "$HOME/.config/waybar/scripts/codexbar.sh",
         "return-type": "json",
         "format": "{}",
         "interval": 30,
