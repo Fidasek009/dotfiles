@@ -1,0 +1,2 @@
+-- Add machine-specific keys here. See the Hyprland Lua binding documentation.
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })

@@ -1,4 +1,5 @@
-home/.config/hypr/monitors.conf
+home/.config/hypr/monitors.lua
+home/.config/hypr/function-keys.lua
 *.swp
 *.swo
 .DS_Store

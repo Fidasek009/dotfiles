@@ -12,13 +12,14 @@ Personal dotfiles and setup manifests for a CachyOS/Hyprland user environment.
 
 The active login shell is fish. Shell configuration is tracked through `home/.config/fish/config.fish`; bash and zsh startup files are intentionally not managed.
 
-Hardware-specific files are not tracked. For Hyprland monitors, copy:
+Hyprland uses `~/.config/hypr/hyprland.lua`, symlinked into this repo. Hardware-specific files are not tracked. On a new machine, create the local includes:
 
 ```sh
-cp ~/.config/hypr/monitors.conf.example ~/.config/hypr/monitors.conf
+cp ~/dotfiles/home/.config/hypr/monitors.lua.example ~/.config/hypr/monitors.lua
+cp ~/dotfiles/home/.config/hypr/function-keys.lua.example ~/.config/hypr/function-keys.lua
 ```
 
-Then edit `~/.config/hypr/monitors.conf` for the current machine.
+Then edit `~/.config/hypr/monitors.lua` and `~/.config/hypr/function-keys.lua` for the current machine. Validate with `Hyprland --verify-config`. Changing from the legacy `.conf` format to Lua requires logging out and back in.
 
 ## Apply Dotfiles
 
@@ -34,7 +35,7 @@ It calls the included linker:
 ./scripts/link-dotfiles.sh
 ```
 
-It refuses to overwrite live files that differ from the repo copy. Hardware-specific files such as `~/.config/hypr/monitors.conf` stay outside the repo.
+It refuses to overwrite live files that differ from the repo copy. Hardware-specific files such as `~/.config/hypr/monitors.lua` stay outside the repo.
 
 ## Install Packages
 

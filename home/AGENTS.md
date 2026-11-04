@@ -30,10 +30,10 @@ Update this file whenever a lasting system preference, config location, or manag
 
 ## Important Paths
 
-- Hyprland config: `~/dotfiles/home/.config/hypr/hyprland.conf`
+- Hyprland config: `~/dotfiles/home/.config/hypr/hyprland.lua` (native Lua API; local modules resolve from `~/.config/hypr/`)
 - Hyprlock config: `~/dotfiles/home/.config/hypr/hyprlock.conf`
-- Hyprland machine-local monitor config: `~/.config/hypr/monitors.conf`
-- Hyprland machine-local function-key config: `~/.config/hypr/function-keys.conf`
+- Hyprland machine-local monitor config: `~/.config/hypr/monitors.lua`
+- Hyprland machine-local function-key config: `~/.config/hypr/function-keys.lua`
 - Fuzzel launcher config: `~/dotfiles/home/.config/fuzzel/fuzzel.ini`
 - Waybar config: `~/dotfiles/home/.config/waybar/`
 - User GUI environment: `~/dotfiles/home/.config/environment.d/`
