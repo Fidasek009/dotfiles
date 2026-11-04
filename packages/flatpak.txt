@@ -2,3 +2,4 @@ app.zen_browser.zen
 com.discordapp.Discord
 com.github.tchx84.Flatseal
 com.spotify.Client
+org.mozilla.thunderbird
