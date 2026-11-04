@@ -5,3 +5,6 @@ alias kys='systemctl poweroff'
 # Disable CachyOS fastfetch welcome message.
 function fish_greeting
 end
+
+# opencode
+fish_add_path /home/fida/.opencode/bin
