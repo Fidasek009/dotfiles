@@ -60,6 +60,7 @@ fuzzel
 git
 github-cli
 glances
+gnome-keyring
 grim
 gst-libav
 gst-plugin-pipewire

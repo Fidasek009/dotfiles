@@ -1,2 +1,3 @@
 sddm-astronaut-theme
+t3code-bin
 visual-studio-code-bin
