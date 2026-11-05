@@ -61,6 +61,14 @@ hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("screenshot copy-region"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("screenshot copy-screen"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
+
+-- Ignore maximize requests from apps (e.g. kitty restoring a cached
+-- maximized state), so new windows tile instead of covering the screen.
+hl.window_rule({
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+    suppress_event = "maximize",
+})
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exit())
 hl.bind(mainMod .. " + SHIFT + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout all next"))
 
