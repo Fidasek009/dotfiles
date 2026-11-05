@@ -23,9 +23,14 @@ require("input")
 hl.on("hyprland.start", function()
     hl.exec_cmd("command -v hyprpaper >/dev/null 2>&1 && { pgrep -x hyprpaper >/dev/null || hyprpaper; }")
     hl.exec_cmd("clipboard-watch")
+    -- Must run after the compositor starts; launching during config load kills Waybar.
+    hl.exec_cmd("pgrep -x waybar >/dev/null || waybar")
 end)
--- Like the former exec setting, run this on startup and each reload.
-hl.exec_cmd("pgrep -x waybar >/dev/null || waybar")
+
+-- If Waybar dies, restart it on the next config reload.
+hl.on("config.reloaded", function()
+    hl.exec_cmd("pgrep -x waybar >/dev/null || waybar")
+end)
 
 hl.config({
     general = { gaps_in = 5, gaps_out = 8 },
