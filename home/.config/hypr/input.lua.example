@@ -1,0 +1,10 @@
+-- Machine-local input settings. Set the device name from `hyprctl devices`.
+--
+-- libinput's flat profile uses factor = 1 + sensitivity, so:
+--   -0.5      -> 50% speed
+--   -0.96875  -> 1/32 speed (Windows pointer speed 1/20, EPP off)
+hl.device({
+    name = "epic-mouse-v1",
+    sensitivity = 0.0,
+    accel_profile = "flat",
+})

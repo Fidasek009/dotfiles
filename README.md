@@ -12,14 +12,7 @@ Personal dotfiles and setup manifests for a CachyOS/Hyprland user environment.
 
 The active login shell is fish. Shell configuration is tracked through `home/.config/fish/config.fish`; bash and zsh startup files are intentionally not managed.
 
-Hyprland uses `~/.config/hypr/hyprland.lua`, symlinked into this repo. Hardware-specific files are not tracked. On a new machine, create the local includes:
-
-```sh
-cp ~/dotfiles/home/.config/hypr/monitors.lua.example ~/.config/hypr/monitors.lua
-cp ~/dotfiles/home/.config/hypr/function-keys.lua.example ~/.config/hypr/function-keys.lua
-```
-
-Then edit `~/.config/hypr/monitors.lua` and `~/.config/hypr/function-keys.lua` for the current machine. Validate with `Hyprland --verify-config`. Changing from the legacy `.conf` format to Lua requires logging out and back in.
+Hyprland uses `~/.config/hypr/hyprland.lua`, symlinked into this repo. Hardware-specific files are not tracked. `./install.sh` creates any missing machine-local files from the tracked `*.example` templates (`monitors.lua`, `function-keys.lua`, `input.lua`), so adding a new local include does not require a new install step. Edit those files under `~/.config/hypr/` for the current machine. Validate with `Hyprland --verify-config`. Changing from the legacy `.conf` format to Lua requires logging out and back in.
 
 ## Apply Dotfiles
 

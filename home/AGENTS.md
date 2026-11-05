@@ -15,6 +15,7 @@ Update this file whenever a lasting system preference, config location, or manag
 
 - Prefer dotfiles for user-level configuration.
 - For managed user config, edit files in `~/dotfiles/home/` and keep the live files as symlinks into that repo.
+- Machine-local files are seeded from tracked `*.example` templates by `~/dotfiles/scripts/link-dotfiles.sh`; adding a new local include does not need a new install step.
 - Keep dotfiles focused on portable preferences; put hardware-specific facts such as Hyprland monitor names, resolutions, positions, scale, and device function-key mappings in machine-local includes.
 - Prefer Flatpak for desktop apps (`flatpak install --user ...`).
 - Keep system-wide `/etc` edits minimal; use them only when user-level config is insufficient.
@@ -35,6 +36,7 @@ Update this file whenever a lasting system preference, config location, or manag
 - Hyprlock config: `~/dotfiles/home/.config/hypr/hyprlock.conf`
 - Hyprland machine-local monitor config: `~/.config/hypr/monitors.lua`
 - Hyprland machine-local function-key config: `~/.config/hypr/function-keys.lua`
+- Hyprland machine-local pointer config: `~/.config/hypr/input.lua`
 - Fuzzel launcher config: `~/dotfiles/home/.config/fuzzel/fuzzel.ini`
 - Waybar config: `~/dotfiles/home/.config/waybar/`
 - User GUI environment: `~/dotfiles/home/.config/environment.d/`

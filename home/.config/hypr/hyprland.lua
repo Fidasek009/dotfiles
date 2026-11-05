@@ -18,6 +18,7 @@ local configHome = os.getenv("XDG_CONFIG_HOME") or (os.getenv("HOME") .. "/.conf
 package.path = configHome .. "/hypr/?.lua;" .. package.path
 require("monitors")
 require("function-keys")
+require("input")
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("command -v hyprpaper >/dev/null 2>&1 && { pgrep -x hyprpaper >/dev/null || hyprpaper; }")
