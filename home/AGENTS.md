@@ -10,6 +10,7 @@ Update this file whenever a lasting system preference, config location, or manag
 - Compositor: Hyprland
 - Login shell: fish (`/bin/fish`)
 - Dotfiles repo: `~/dotfiles`
+- External monitor `HDMI-A-1` (2560x1440) is driven by the NVIDIA GP107 through nouveau, which lacks atomic KMS here; Hyprland must use software cursors (`cursor:no_hardware_cursors` in machine-local `input.lua`), otherwise the pointer vanishes when idle on that screen.
 
 ## Preferences
 
